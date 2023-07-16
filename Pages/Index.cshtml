@@ -1,10 +1,37 @@
-﻿@page
-@model IndexModel
+﻿
+@using az_204_test.Models;
+
+@model IEnumerable<Employee>
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Employee Listing";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome - v1</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome - Team Employees</h1>
+   <div>
+       <P></P>
+       <table>
+           <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Date of Birth</th>
+            <th>Years of Experience</th>
+           </thead>
+           <tbody>
+
+                @foreach (var employee in Model)
+                    {
+                        <tr>
+                        <td>@employee.Id</td>
+                        <td>@employee.FullName</td>
+                        <td>@employee.Designation</td>
+                        <td>@employee.DateOfBirth</td>
+                        <td>@employee.YearsExperienced</td>
+                        </tr>
+                    }
+
+           </tbody>
+       </table>
+   </div>
 </div>

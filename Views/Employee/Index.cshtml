@@ -1,0 +1,48 @@
+﻿@using az_204_test.Models;
+
+@model IEnumerable<Employee>
+@{
+    ViewData["Title"] = "Employee Listing";
+}
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="text-center">
+    <h1 class="display-4">Welcome - Team Employees</h1>
+    <div>
+        <P></P>
+        <table>
+            <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Date of Birth</th>
+            <th>Years of Experience</th>
+            </thead>
+            <tbody>
+
+                @foreach (var employee in Model)
+                {
+                    <tr>
+                        <td>@employee.Id</td>
+                        <td>@employee.FullName</td>
+                        <td>@employee.Designation</td>
+                        <td>@employee.DateOfBirth</td>
+                        <td>@employee.YearsExperienced</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
